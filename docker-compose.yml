@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  flowise:
+    image: flowiseai/flowise
+    container_name: flowise
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - FLOWISE_USERNAME=admin
+      - FLOWISE_PASSWORD=admin123
+    volumes:
+      - ~/flowise/data:/root/.flowise
+      - ~/flowise/imports:/imports
