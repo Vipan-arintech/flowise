@@ -11,6 +11,7 @@ services:
       - PORT=3000
       - FLOWISE_USERNAME=admin
       - FLOWISE_PASSWORD=admin123
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
     volumes:
       - ~/flowise/data:/root/.flowise
       - ~/flowise/imports:/imports
