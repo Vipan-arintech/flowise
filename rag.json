@@ -496,7 +496,7 @@
           "document": [
             "{{pdfFile_0.data.instance}}"
           ],
-          "embeddings": "{{openAIEmbeddingsCustom_0.data.instance}}",
+          "embeddings": "{{openAIEmbeddings_0.data.instance}}",
           "recordManager": "",
           "host": "us-east-1.701503fe-e7fe-4255-845a-9e32d78bb43d.aws.yugabyte.cloud",
           "database": "yugabyte",
@@ -633,130 +633,6 @@
       "dragging": false
     },
     {
-      "id": "openAIEmbeddingsCustom_0",
-      "position": {
-        "x": -18.023956773312932,
-        "y": -79.99734667962903
-      },
-      "type": "customNode",
-      "data": {
-        "id": "openAIEmbeddingsCustom_0",
-        "label": "OpenAI Embeddings Custom",
-        "version": 3,
-        "name": "openAIEmbeddingsCustom",
-        "type": "OpenAIEmbeddingsCustom",
-        "baseClasses": [
-          "OpenAIEmbeddingsCustom",
-          "Embeddings"
-        ],
-        "category": "Embeddings",
-        "description": "OpenAI API to generate embeddings for a given text",
-        "inputParams": [
-          {
-            "label": "Connect Credential",
-            "name": "credential",
-            "type": "credential",
-            "credentialNames": [
-              "openAIApi"
-            ],
-            "id": "openAIEmbeddingsCustom_0-input-credential-credential",
-            "display": true
-          },
-          {
-            "label": "Strip New Lines",
-            "name": "stripNewLines",
-            "type": "boolean",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-stripNewLines-boolean",
-            "display": true
-          },
-          {
-            "label": "Batch Size",
-            "name": "batchSize",
-            "type": "number",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-batchSize-number",
-            "display": true
-          },
-          {
-            "label": "Timeout",
-            "name": "timeout",
-            "type": "number",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-timeout-number",
-            "display": true
-          },
-          {
-            "label": "BasePath",
-            "name": "basepath",
-            "type": "string",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-basepath-string",
-            "display": true
-          },
-          {
-            "label": "BaseOptions",
-            "name": "baseOptions",
-            "type": "json",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-baseOptions-json",
-            "display": true
-          },
-          {
-            "label": "Model Name",
-            "name": "modelName",
-            "type": "string",
-            "optional": true,
-            "id": "openAIEmbeddingsCustom_0-input-modelName-string",
-            "display": true
-          },
-          {
-            "label": "Dimensions",
-            "name": "dimensions",
-            "type": "number",
-            "optional": true,
-            "additionalParams": true,
-            "id": "openAIEmbeddingsCustom_0-input-dimensions-number",
-            "display": true
-          }
-        ],
-        "inputAnchors": [],
-        "inputs": {
-          "stripNewLines": "",
-          "batchSize": "",
-          "timeout": "",
-          "basepath": "",
-          "baseOptions": "",
-          "modelName": "gpt-4",
-          "dimensions": ""
-        },
-        "outputAnchors": [
-          {
-            "id": "openAIEmbeddingsCustom_0-output-openAIEmbeddingsCustom-OpenAIEmbeddingsCustom|Embeddings",
-            "name": "openAIEmbeddingsCustom",
-            "label": "OpenAIEmbeddingsCustom",
-            "description": "OpenAI API to generate embeddings for a given text",
-            "type": "OpenAIEmbeddingsCustom | Embeddings"
-          }
-        ],
-        "outputs": {},
-        "selected": false
-      },
-      "width": 300,
-      "height": 433,
-      "selected": false,
-      "positionAbsolute": {
-        "x": -18.023956773312932,
-        "y": -79.99734667962903
-      },
-      "dragging": false
-    },
-    {
       "id": "pdfFile_0",
       "position": {
         "x": -17.399182501643637,
@@ -881,12 +757,127 @@
         "selected": false
       },
       "width": 300,
-      "height": 541,
+      "height": 523,
       "selected": false,
       "positionAbsolute": {
         "x": -17.399182501643637,
         "y": -698.3155435042568
       },
+      "dragging": false
+    },
+    {
+      "id": "openAIEmbeddings_0",
+      "position": {
+        "x": -35.82087368074943,
+        "y": -68.13523345051661
+      },
+      "type": "customNode",
+      "data": {
+        "id": "openAIEmbeddings_0",
+        "label": "OpenAI Embeddings",
+        "version": 4,
+        "name": "openAIEmbeddings",
+        "type": "OpenAIEmbeddings",
+        "baseClasses": [
+          "OpenAIEmbeddings",
+          "Embeddings"
+        ],
+        "category": "Embeddings",
+        "description": "OpenAI API to generate embeddings for a given text",
+        "inputParams": [
+          {
+            "label": "Connect Credential",
+            "name": "credential",
+            "type": "credential",
+            "credentialNames": [
+              "openAIApi"
+            ],
+            "id": "openAIEmbeddings_0-input-credential-credential",
+            "display": true
+          },
+          {
+            "label": "Model Name",
+            "name": "modelName",
+            "type": "asyncOptions",
+            "loadMethod": "listModels",
+            "default": "text-embedding-ada-002",
+            "id": "openAIEmbeddings_0-input-modelName-asyncOptions",
+            "display": true
+          },
+          {
+            "label": "Strip New Lines",
+            "name": "stripNewLines",
+            "type": "boolean",
+            "optional": true,
+            "additionalParams": true,
+            "id": "openAIEmbeddings_0-input-stripNewLines-boolean",
+            "display": true
+          },
+          {
+            "label": "Batch Size",
+            "name": "batchSize",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "openAIEmbeddings_0-input-batchSize-number",
+            "display": true
+          },
+          {
+            "label": "Timeout",
+            "name": "timeout",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "openAIEmbeddings_0-input-timeout-number",
+            "display": true
+          },
+          {
+            "label": "BasePath",
+            "name": "basepath",
+            "type": "string",
+            "optional": true,
+            "additionalParams": true,
+            "id": "openAIEmbeddings_0-input-basepath-string",
+            "display": true
+          },
+          {
+            "label": "Dimensions",
+            "name": "dimensions",
+            "type": "number",
+            "optional": true,
+            "additionalParams": true,
+            "id": "openAIEmbeddings_0-input-dimensions-number",
+            "display": true
+          }
+        ],
+        "inputAnchors": [],
+        "inputs": {
+          "modelName": "text-embedding-ada-002",
+          "stripNewLines": "",
+          "batchSize": "",
+          "timeout": "",
+          "basepath": "",
+          "dimensions": ""
+        },
+        "outputAnchors": [
+          {
+            "id": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAIEmbeddings|Embeddings",
+            "name": "openAIEmbeddings",
+            "label": "OpenAIEmbeddings",
+            "description": "OpenAI API to generate embeddings for a given text",
+            "type": "OpenAIEmbeddings | Embeddings"
+          }
+        ],
+        "outputs": {},
+        "selected": false
+      },
+      "width": 300,
+      "height": 430,
+      "positionAbsolute": {
+        "x": -35.82087368074943,
+        "y": -68.13523345051661
+      },
+      "selected": false,
       "dragging": false
     }
   ],
@@ -924,12 +915,12 @@
       "id": "postgres_0-postgres_0-output-retriever-Postgres|VectorStoreRetriever|BaseRetriever-conversationalRetrievalQAChain_0-conversationalRetrievalQAChain_0-input-vectorStoreRetriever-BaseRetriever"
     },
     {
-      "source": "openAIEmbeddingsCustom_0",
-      "sourceHandle": "openAIEmbeddingsCustom_0-output-openAIEmbeddingsCustom-OpenAIEmbeddingsCustom|Embeddings",
+      "source": "openAIEmbeddings_0",
+      "sourceHandle": "openAIEmbeddings_0-output-openAIEmbeddings-OpenAIEmbeddings|Embeddings",
       "target": "postgres_0",
       "targetHandle": "postgres_0-input-embeddings-Embeddings",
       "type": "buttonedge",
-      "id": "openAIEmbeddingsCustom_0-openAIEmbeddingsCustom_0-output-openAIEmbeddingsCustom-OpenAIEmbeddingsCustom|Embeddings-postgres_0-postgres_0-input-embeddings-Embeddings"
+      "id": "openAIEmbeddings_0-openAIEmbeddings_0-output-openAIEmbeddings-OpenAIEmbeddings|Embeddings-postgres_0-postgres_0-input-embeddings-Embeddings"
     }
   ]
 }
