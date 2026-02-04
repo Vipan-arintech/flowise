@@ -498,7 +498,7 @@
           ],
           "embeddings": "{{openAIEmbeddings_0.data.instance}}",
           "recordManager": "",
-          "host": "us-east-1.701503fe-e7fe-4255-845a-9e32d78bb43d.aws.yugabyte.cloud",
+          "host": "",
           "database": "yugabyte",
           "port": "5433",
           "ssl": true,
